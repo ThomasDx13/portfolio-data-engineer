@@ -29,6 +29,8 @@ InduTechData est une entreprise du secteur industriel confrontée à une croissa
 - Étude d'architecture chiffrée : investissement initial estimé entre 2 500 et 4 300 €, coûts récurrents de 260 à 350 €/mois, avec justification technique de chaque composant (scalabilité, interopérabilité, sécurité)
 - Livrables : schéma d'architecture, document de justification technique détaillé, vidéo de démonstration
 
+![Schéma de l'architecture cloud hybride AWS proposée pour InduTechData](images/projet9/schema-architecture-aws.png)
+
 *Code et livrables disponibles sur demande.*
 
 ---
@@ -51,6 +53,8 @@ Kestra (orchestration, déclenchement planifié via cron), DuckDB (requêtes SQL
 - Livrables produits : rapport de CA (Excel), extractions des vins premium et ordinaires (CSV)
 - Bilan assumé en fin de mission : pipeline fonctionnel de bout en bout, tous les tests passent, mais alerting limité aux logs Kestra (pas de notification email) et absence de CI/CD sur les scripts, identifiées comme pistes d'amélioration
 
+![Logigramme du pipeline BottleNeck : ingestion, nettoyage, dédoublonnage, jointure, calcul du CA et classification, avec un contrôle bloquant à chaque étape](images/projet10/workflow-kestra.png)
+
 *Code et livrables disponibles sur demande.*
 
 ---
@@ -71,6 +75,8 @@ LangChain (orchestration via LCEL), Mistral AI (mistral-medium-latest pour la g�
 - Temps de recherche vectorielle : 16,33 ms
 - Recherche hybride combinant similarité sémantique, filtrage par mots-clés exacts et détection de dates/périodes
 - Évaluation sur un jeu annoté de 13 questions, par similarité cosinus et LLM-juge
+
+![Schéma du pipeline de vectorisation (extraction OpenAgenda, chunking, embeddings, indexation Faiss) et du pipeline RAG (recherche hybride, augmentation du prompt, génération par Mistral)](images/projet11/pipeline-rag.png)
 
 **Dépôt : [github.com/ThomasDx13/puls-events-rag](https://github.com/ThomasDx13/puls-events-rag)**
 
@@ -93,6 +99,8 @@ Architecture medallion (Bronze/Silver/Gold) sur Delta Lake. Ingestion par Change
 - Simulateur d'API Strava reproduisant des cas réels (pagination, rafraîchissement de token, données malformées)
 - Scripts de démonstration dédiés pour rendre visible le fonctionnement du pipeline (mise à jour de règle, déclenchement d'activité en direct)
 - Projet à visée pédagogique sur les patterns d'architecture, sans métriques de production associées
+
+![Architecture du pipeline : capture CDC (Debezium, Redpanda), traitement analytique en couches Bronze/Silver/Gold (Spark, Delta Lake), orchestration Airflow et restitution (miroir PostgreSQL, Power BI)](images/projet12/pipeline-sport-data.png)
 
 **Dépôt : [github.com/ThomasDx13/sport-data-solution](https://github.com/ThomasDx13/sport-data-solution)**
 
